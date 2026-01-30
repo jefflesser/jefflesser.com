@@ -272,8 +272,8 @@ a:hover {
 
 .hero-photo {
     flex: 0 0 auto;
-    width: 350px;
-    height: 420px;
+    width: 420px;
+    height: 500px;
     background: var(--color-bg-card);
     border-radius: 20px;
     border: 1px solid var(--color-border);
