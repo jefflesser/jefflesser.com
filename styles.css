@@ -252,9 +252,9 @@ a:hover {
 
 .hero-inner {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
+    gap: 3rem;
     max-width: var(--max-width);
     margin: 0 auto;
     width: 100%;
@@ -263,25 +263,25 @@ a:hover {
 }
 
 .hero-content {
-    flex: 1;
-    max-width: 600px;
-    text-align: left;
+    max-width: 900px;
+    text-align: center;
     position: relative;
     z-index: 1;
 }
 
 .hero-photo {
     flex: 0 0 auto;
-    width: 420px;
-    height: 500px;
+    width: 220px;
+    height: 220px;
     background: var(--color-bg-card);
-    border-radius: 20px;
-    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    border: 3px solid var(--color-border);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     position: relative;
+    box-shadow: 0 20px 50px -20px var(--color-accent-glow);
 }
 
 .hero-photo::before {
@@ -317,7 +317,7 @@ a:hover {
 .hero-description {
     font-size: 1.125rem;
     color: var(--color-text-secondary);
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto 2.5rem;
     line-height: 1.8;
 }
@@ -688,19 +688,12 @@ a:hover {
     }
 
     .hero-inner {
-        flex-direction: column-reverse;
-        gap: 2.5rem;
-        text-align: center;
-    }
-
-    .hero-content {
-        text-align: center;
-        max-width: 100%;
+        gap: 2rem;
     }
 
     .hero-photo {
-        width: 320px;
-        height: 380px;
+        width: 180px;
+        height: 180px;
     }
 
     .hero-description {
