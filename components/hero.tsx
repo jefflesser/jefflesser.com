@@ -75,7 +75,7 @@ export function Hero() {
           className="font-mono mt-4 text-sm tracking-widest uppercase"
           style={{ color: "#888899", letterSpacing: "0.25em" }}
         >
-          Let&apos;s F***ing Go To Market
+          I love helping startups grow.
         </motion.p>
 
         {/* Name */}
