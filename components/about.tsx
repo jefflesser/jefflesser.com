@@ -17,18 +17,11 @@ const interests = [
   { emoji: "💻", label: "technology" },
 ];
 
-/*
-  Place these files in /public:
-    about-1.png  (first image from original site)
-    about-2.png  (second)
-    about-3.png  (third)
-    about-4.png  (fourth)
-*/
 const photos = [
-  { src: "/about-1.png", alt: "Jeff Lesser" },
-  { src: "/about-2.png", alt: "Jeff Lesser" },
-  { src: "/about-3.png", alt: "Jeff Lesser" },
-  { src: "/about-4.png", alt: "Jeff Lesser" },
+  { src: "/IMG_1302.png", alt: "Jeff waving" },
+  { src: "/IMG_1303.png", alt: "Jeff on laptop" },
+  { src: "/IMG_1304.png", alt: "Jeff peace sign" },
+  { src: "/IMG_1305.png", alt: "Jeff smiling" },
 ];
 
 export function About() {
@@ -96,30 +89,26 @@ export function About() {
         </p>
       </motion.div>
 
-      {/* Photo strip — 4 personality images */}
+      {/* Memoji strip — floats on dark bg, transparent PNGs */}
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        className="mt-12 grid grid-cols-4 gap-3"
+        className="mt-12 flex items-end justify-between"
         aria-hidden="true"
       >
         {photos.map(({ src, alt }, i) => (
           <motion.div
             key={src}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{
-              duration: 0.4,
-              delay: 0.25 + i * 0.06,
+              duration: 0.5,
+              delay: 0.22 + i * 0.07,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="overflow-hidden rounded-sm"
-            style={{
-              border: "1px solid rgba(255,255,255,0.06)",
-              background: "#13131a",
-              aspectRatio: "1 / 1",
-            }}
+            whileHover={{ scale: 1.08, y: -4 }}
+            style={{ width: "23%" }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -127,13 +116,12 @@ export function About() {
               alt={alt}
               style={{
                 width: "100%",
-                height: "100%",
-                objectFit: "cover",
+                height: "auto",
                 display: "block",
+                filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.5))",
               }}
               onError={(e) => {
-                /* hide tile if image not yet added */
-                (e.currentTarget as HTMLElement).style.display = "none";
+                (e.currentTarget.parentElement as HTMLElement).style.display = "none";
               }}
             />
           </motion.div>
