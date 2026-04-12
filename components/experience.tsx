@@ -10,8 +10,8 @@ const jobs = [
     title: "Head of Marketing",
     dates: "2024–Present",
     bullets: [
-      "Building GTM from scratch for embedded payroll infrastructure.",
-      "Driving product-market-channel-model fit across all marketing functions.",
+      "Built account based GTM from scratch for embedded payroll infrastructure.",
+      "Driving product-market-channel-model fit across all marketing functions",
     ],
   },
   {
@@ -31,17 +31,17 @@ const jobs = [
     dates: "2020–2021",
     bullets: [
       "Led full marketing strategy across multiple products with a 2-person team.",
-      "Implemented jobs-to-be-done framework across all personas and messaging.",
+      "Implemented jobs-to-be-done framework defining personas and messaging.",
     ],
   },
   {
     company: "RADAR",
-    url: "https://radar.com",
+    url: "https://radar.tech",
     title: "Director of Marketing",
     dates: "2019–2020",
     bullets: [
       "Ran all marketing across 2 product categories, 5 products, B2B + B2C.",
-      "Led 3-person team: PMM, brand, demand gen, comms, events, analytics.",
+      "Led 3-person team executing PMM, brand, demand gen, comms, events, and analytics.",
     ],
   },
   {
@@ -70,17 +70,18 @@ const jobs = [
     title: "Marketing Manager",
     dates: "2012–2014",
     bullets: [
-      "Owned full growth stack: paid, SEO, email, automation, social, content.",
-      "Rebuilt website and positioning to drive new customer acquisition.",
+      "Owned full growth stack including paid, SEO, email, automation, social, and more.",
+      "Defined positioning and rebuilt website to drive new customer acquisition.",
     ],
   },
   {
     company: "Giantnerd",
     url: "https://giantnerd.com",
     title: "Head of Marketing",
-    dates: "2008–2011, 2012",
+    dates: "2008–2012",
     bullets: [
       "Drove double-digit revenue growth while reducing marketing costs through channel optimization.",
+      "Rebranded company, launched new products, brought on new product lines to expand business.",
     ],
   },
 ];
@@ -113,7 +114,7 @@ function ExperienceItem({
       />
       {/* Timeline dot */}
       <div
-        className="absolute left-[-3px] top-[9px] h-[7px] w-[7px] rounded-full transition-colors duration-200 group-hover:bg-indigo-500"
+        className="absolute left-[-3px] top-[9px] h-[7px] w-[7px] rounded-full transition-colors duration-200 group-hover:bg-blue-500"
         style={{ background: "#2a2a3a" }}
         aria-hidden="true"
       />
@@ -127,7 +128,7 @@ function ExperienceItem({
             className="font-sans text-lg font-semibold transition-colors duration-150"
             style={{ color: "#e8e8e8" }}
             onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "#6366f1")
+              ((e.currentTarget as HTMLElement).style.color = "#3b82f6")
             }
             onMouseLeave={(e) =>
               ((e.currentTarget as HTMLElement).style.color = "#e8e8e8")
@@ -135,10 +136,7 @@ function ExperienceItem({
           >
             {job.company}
           </a>
-          <span
-            className="font-sans text-base"
-            style={{ color: "#888899" }}
-          >
+          <span className="font-sans text-base" style={{ color: "#888899" }}>
             {job.title}
           </span>
           <span
@@ -157,7 +155,7 @@ function ExperienceItem({
               style={{ color: "#888899", lineHeight: "1.6" }}
             >
               <span
-                style={{ color: "#6366f1", marginTop: "0.3em", flexShrink: 0 }}
+                style={{ color: "#3b82f6", marginTop: "0.3em", flexShrink: 0 }}
                 aria-hidden="true"
               >
                 —
@@ -180,7 +178,7 @@ export function Experience() {
       id="experience"
       ref={ref}
       aria-label="Work Experience"
-      className="relative px-6 py-24 md:py-32"
+      className="relative px-8 py-24 md:px-12 md:py-32"
     >
       {/* Divider */}
       <div
@@ -189,16 +187,16 @@ export function Experience() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-12"
-        >
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className="mb-12 flex items-end justify-between gap-6"
+      >
+        <div>
           <span
             className="font-mono mb-4 block text-xs tracking-widest uppercase"
-            style={{ color: "#6366f1", letterSpacing: "0.2em" }}
+            style={{ color: "#3b82f6", letterSpacing: "0.2em" }}
           >
             Experience
           </span>
@@ -208,18 +206,30 @@ export function Experience() {
           >
             Where I&apos;ve Built
           </h2>
-        </motion.div>
-
-        <div>
-          {jobs.map((job, i) => (
-            <ExperienceItem
-              key={job.company + job.dates}
-              job={job}
-              index={i}
-              isInView={isInView}
-            />
-          ))}
         </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/IMG_1303.png"
+          alt=""
+          aria-hidden="true"
+          style={{
+            width: "130px",
+            height: "auto",
+            flexShrink: 0,
+            filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.5))",
+          }}
+        />
+      </motion.div>
+
+      <div>
+        {jobs.map((job, i) => (
+          <ExperienceItem
+            key={job.company + job.dates}
+            job={job}
+            index={i}
+            isInView={isInView}
+          />
+        ))}
       </div>
     </section>
   );
