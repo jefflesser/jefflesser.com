@@ -191,20 +191,34 @@ export function Experience() {
         initial={{ opacity: 0, y: 24 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-        className="mb-12"
+        className="mb-12 flex items-end justify-between gap-6"
       >
-        <span
-          className="font-mono mb-4 block text-xs tracking-widest uppercase"
-          style={{ color: "#3b82f6", letterSpacing: "0.2em" }}
-        >
-          Experience
-        </span>
-        <h2
-          className="font-sans text-2xl font-semibold md:text-3xl"
-          style={{ color: "#e8e8e8" }}
-        >
-          Where I&apos;ve Built
-        </h2>
+        <div>
+          <span
+            className="font-mono mb-4 block text-xs tracking-widest uppercase"
+            style={{ color: "#3b82f6", letterSpacing: "0.2em" }}
+          >
+            Experience
+          </span>
+          <h2
+            className="font-sans text-2xl font-semibold md:text-3xl"
+            style={{ color: "#e8e8e8" }}
+          >
+            Where I&apos;ve Built
+          </h2>
+        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/IMG_1303.png"
+          alt=""
+          aria-hidden="true"
+          style={{
+            width: "130px",
+            height: "auto",
+            flexShrink: 0,
+            filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.5))",
+          }}
+        />
       </motion.div>
 
       <div>

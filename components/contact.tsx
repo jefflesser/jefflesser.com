@@ -51,11 +51,31 @@ export function Contact() {
             LFGTM.
           </h2>
           <p
-            className="font-sans mb-10 text-xl font-semibold"
+            className="font-sans mb-8 text-xl font-semibold"
             style={{ color: "#e8e8e8" }}
           >
             Let&apos;s build something.
           </p>
+
+          {/* Peace-sign Memoji */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 10 }}
+            animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.12, ease: [0.16, 1, 0.3, 1] }}
+            className="mb-10 flex justify-center"
+            aria-hidden="true"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/IMG_1304.png"
+              alt=""
+              style={{
+                width: "160px",
+                height: "auto",
+                filter: "drop-shadow(0 8px 32px rgba(0,0,0,0.5))",
+              }}
+            />
+          </motion.div>
         </motion.div>
 
         <motion.div

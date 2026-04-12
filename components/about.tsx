@@ -19,9 +19,6 @@ const interests = [
 
 const photos = [
   { src: "/IMG_1302.png", alt: "Jeff waving" },
-  { src: "/IMG_1303.png", alt: "Jeff on laptop" },
-  { src: "/IMG_1304.png", alt: "Jeff peace sign" },
-  { src: "/IMG_1305.png", alt: "Jeff smiling" },
 ];
 
 export function About() {
@@ -55,78 +52,65 @@ export function About() {
         </span>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-        className="space-y-5"
-      >
-        <p
-          className="font-sans text-lg leading-relaxed md:text-xl"
-          style={{ color: "#e8e8e8", fontWeight: 400, lineHeight: "1.75" }}
+      {/* Text + waving Memoji side by side */}
+      <div className="flex flex-col gap-8 md:flex-row md:items-end md:gap-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="flex-1 space-y-5"
         >
-          I bring 15+ years building and running marketing at B2B tech startups. My
-          expertise is in sales-led, B2B, technical products with a developer audience.
-          I&apos;ve done this at every stage: from pre-PMF to public companies.
-        </p>
-
-        <p
-          className="font-sans text-lg leading-relaxed md:text-xl"
-          style={{ color: "#c8c8d8", fontWeight: 400, lineHeight: "1.75" }}
-        >
-          I use AI and lean teams to build full-stack marketing functions including
-          PMM, brand, demand gen, content, comms, analytics, and more. I believe in
-          delivering results by providing context and expecting accountability.
-        </p>
-
-        <p
-          className="font-sans text-lg leading-relaxed md:text-xl"
-          style={{ color: "#c8c8d8", fontWeight: 400, lineHeight: "1.75" }}
-        >
-          My approach is to build tech-driven GTM systems that let small teams punch 
-          well above their weight. Automation, intelligence, and operational rigor that
-          allows humans to focus on the work that actually matters.
-        </p>
-      </motion.div>
-
-      {/* Memoji strip — floats on dark bg, transparent PNGs */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        className="mt-12 flex items-end justify-between"
-        aria-hidden="true"
-      >
-        {photos.map(({ src, alt }, i) => (
-          <motion.div
-            key={src}
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{
-              duration: 0.5,
-              delay: 0.22 + i * 0.07,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            whileHover={{ scale: 1.08, y: -4 }}
-            style={{ width: "23%" }}
+          <p
+            className="font-sans text-lg leading-relaxed md:text-xl"
+            style={{ color: "#e8e8e8", fontWeight: 400, lineHeight: "1.75" }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={src}
-              alt={alt}
-              style={{
-                width: "100%",
-                height: "auto",
-                display: "block",
-                filter: "drop-shadow(0 8px 24px rgba(0,0,0,0.5))",
-              }}
-              onError={(e) => {
-                (e.currentTarget.parentElement as HTMLElement).style.display = "none";
-              }}
-            />
-          </motion.div>
-        ))}
-      </motion.div>
+            I bring 15+ years building and running marketing at B2B tech startups. My
+            expertise is in sales-led, B2B, technical products with a developer audience.
+            I&apos;ve done this at every stage: from pre-PMF to public companies.
+          </p>
+
+          <p
+            className="font-sans text-lg leading-relaxed md:text-xl"
+            style={{ color: "#c8c8d8", fontWeight: 400, lineHeight: "1.75" }}
+          >
+            I use AI and lean teams to build full-stack marketing functions including
+            PMM, brand, demand gen, content, comms, analytics, and more. I believe in
+            delivering results by providing context and expecting accountability.
+          </p>
+
+          <p
+            className="font-sans text-lg leading-relaxed md:text-xl"
+            style={{ color: "#c8c8d8", fontWeight: 400, lineHeight: "1.75" }}
+          >
+            My approach is to build tech-driven GTM systems that let small teams punch
+            well above their weight. Automation, intelligence, and operational rigor that
+            allows humans to focus on the work that actually matters.
+          </p>
+        </motion.div>
+
+        {/* Waving Memoji — floats beside the text on desktop */}
+        <motion.div
+          initial={{ opacity: 0, x: 16 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          whileHover={{ scale: 1.05, y: -4 }}
+          className="flex-shrink-0 self-end md:self-auto"
+          aria-hidden="true"
+          style={{ width: "180px" }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={photos[0].src}
+            alt={photos[0].alt}
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+              filter: "drop-shadow(0 8px 28px rgba(0,0,0,0.5))",
+            }}
+          />
+        </motion.div>
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 24 }}
