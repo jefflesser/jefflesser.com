@@ -78,16 +78,38 @@ export function Hero() {
           I love helping startups grow.
         </motion.p>
 
-        {/* Name */}
-        <motion.h2
+        {/* Avatar + Name */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 font-sans font-semibold"
-          style={{ fontSize: "clamp(22px, 3vw, 32px)", color: "#e8e8e8" }}
+          className="mt-6 flex flex-col items-center gap-3"
         >
-          Jeff Lesser
-        </motion.h2>
+          {/* Headshot */}
+          <div
+            className="overflow-hidden"
+            style={{
+              width: "60px",
+              height: "60px",
+              borderRadius: "50%",
+              border: "1.5px solid rgba(59,130,246,0.3)",
+              boxShadow: "0 0 20px rgba(59,130,246,0.12)",
+            }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/headshot.png"
+              alt="Jeff Lesser"
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+          <h2
+            className="font-sans font-semibold"
+            style={{ fontSize: "clamp(22px, 3vw, 32px)", color: "#e8e8e8" }}
+          >
+            Jeff Lesser
+          </h2>
+        </motion.div>
 
         {/* Role */}
         <motion.p

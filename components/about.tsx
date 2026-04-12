@@ -17,6 +17,20 @@ const interests = [
   { emoji: "💻", label: "technology" },
 ];
 
+/*
+  Place these files in /public:
+    about-1.png  (first image from original site)
+    about-2.png  (second)
+    about-3.png  (third)
+    about-4.png  (fourth)
+*/
+const photos = [
+  { src: "/about-1.png", alt: "Jeff Lesser" },
+  { src: "/about-2.png", alt: "Jeff Lesser" },
+  { src: "/about-3.png", alt: "Jeff Lesser" },
+  { src: "/about-4.png", alt: "Jeff Lesser" },
+];
+
 export function About() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
@@ -82,10 +96,54 @@ export function About() {
         </p>
       </motion.div>
 
+      {/* Photo strip — 4 personality images */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+        className="mt-12 grid grid-cols-4 gap-3"
+        aria-hidden="true"
+      >
+        {photos.map(({ src, alt }, i) => (
+          <motion.div
+            key={src}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{
+              duration: 0.4,
+              delay: 0.25 + i * 0.06,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            className="overflow-hidden rounded-sm"
+            style={{
+              border: "1px solid rgba(255,255,255,0.06)",
+              background: "#13131a",
+              aspectRatio: "1 / 1",
+            }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={src}
+              alt={alt}
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                display: "block",
+              }}
+              onError={(e) => {
+                /* hide tile if image not yet added */
+                (e.currentTarget as HTMLElement).style.display = "none";
+              }}
+            />
+          </motion.div>
+        ))}
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         className="mt-12"
       >
         <p
