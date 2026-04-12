@@ -5,40 +5,34 @@ import { motion, useInView } from "framer-motion";
 
 const cards = [
   {
-    label: "01",
     title: "AI-Powered GTM Systems",
     description:
-      "Build automated, AI-driven marketing infrastructure that scales output without scaling headcount.",
+      "I build automated, AI-driven marketing infrastructure that scales output without scaling headcount.",
   },
   {
-    label: "02",
     title: "Full-Stack Marketing",
     description:
-      "PMM, brand, demand gen, content, comms, analytics — own the whole function, not just a lane.",
+      "Product marketing, brand, demand gen, content, and more. I own the whole function, not just a lane.",
   },
   {
-    label: "03",
     title: "Technical Fluency",
     description:
-      "Comfortable with APIs, data stacks, SQL, and developer audiences; can talk to engineers and translate for the business.",
+      "Confident with APIs, SDKs, MCPs, and developer audiences. More than a marketer, not quite an engineer.",
   },
   {
-    label: "04",
     title: "GTM Strategy",
     description:
-      "ICP, positioning, narrative, launch, sales enablement — from 0→1 and beyond.",
+      "ICP, positioning, narrative, launch, sales enablement and more from 0 → 1 and beyond.",
   },
   {
-    label: "05",
     title: "Lean Team Leadership",
     description:
-      "Hire, develop, and run high-output teams; do more with less by design.",
+      "I like to hire, develop, and run lean, high-output teams; do more with less by design.",
   },
   {
-    label: "06",
     title: "Economics-Trained Thinking",
     description:
-      "BA in Economics (CU Boulder); brings analytical rigor and systems thinking to every marketing problem.",
+      "I bring analytical rigor and systems thinking to every marketing problem.",
   },
 ];
 
