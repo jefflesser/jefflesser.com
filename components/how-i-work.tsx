@@ -77,7 +77,7 @@ export function HowIWork() {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((card, i) => (
           <motion.div
-            key={card.label}
+            key={card.title}
             initial={{ opacity: 0, y: 32 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{
@@ -103,12 +103,6 @@ export function HowIWork() {
                 (e.currentTarget as HTMLElement).style.background = "#13131a";
               }}
             >
-              <span
-                className="font-mono mb-4 block text-xs"
-                style={{ color: "#3b82f6" }}
-              >
-                {card.label}
-              </span>
               <h3
                 className="font-sans mb-3 text-base font-semibold"
                 style={{ color: "#e8e8e8" }}
