@@ -41,7 +41,7 @@ export function Hero() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
           <h1
-            className="font-mono font-black leading-none tracking-tight"
+            className="font-display font-black leading-none tracking-tight"
             style={{
               fontSize: "clamp(80px, 13vw, 152px)",
               color: "#3b82f6",

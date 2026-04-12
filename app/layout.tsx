@@ -30,7 +30,7 @@ export default function RootLayout({
         />
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Barlow:wght@900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700;800&display=swap"
           rel="stylesheet"
         />
       </head>

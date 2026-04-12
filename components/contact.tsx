@@ -45,7 +45,7 @@ export function Contact() {
           </span>
 
           <h2
-            className="font-mono mb-3 text-3xl font-black md:text-4xl"
+            className="font-display mb-3 text-3xl font-black md:text-4xl"
             style={{ color: "#3b82f6" }}
           >
             LFGTM.
