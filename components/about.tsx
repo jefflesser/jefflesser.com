@@ -9,7 +9,7 @@ const interests = [
   { emoji: "🚴", label: "bikes" },
   { emoji: "🍜", label: "food" },
   { emoji: "🍻", label: "beer" },
-  { emoji: "🥃", label: "whiskey" },
+  { emoji: "🥃", label: "amaro" },
   { emoji: "🎧", label: "music" },
   { emoji: "📚", label: "reading" },
   { emoji: "📈", label: "investing" },
@@ -58,28 +58,27 @@ export function About() {
           className="font-sans text-lg leading-relaxed md:text-xl"
           style={{ color: "#e8e8e8", fontWeight: 400, lineHeight: "1.75" }}
         >
-          15+ years building and running marketing at B2B tech startups —
-          fintech, infrastructure, developer tools. I&apos;ve done this at every
-          stage: pre-product, pre-revenue, pre-PMF, and scaling through Series B
-          and beyond.
+          I bring 15+ years building and running marketing at B2B tech startups. My
+          expertise is in sales-led, B2B, technical products with a developer audience.
+          I&apos;ve done this at every stage: from pre-PMF to public companies.
         </p>
 
         <p
           className="font-sans text-lg leading-relaxed md:text-xl"
           style={{ color: "#c8c8d8", fontWeight: 400, lineHeight: "1.75" }}
         >
-          I build full-stack marketing functions — PMM, brand, demand gen,
-          content, comms, analytics — as a lean team. No siloed lanes. No
-          bloated org charts. Just sharp people doing high-leverage work.
+          I use AI and lean teams to build full-stack marketing functions including
+          PMM, brand, demand gen, content, comms, analytics, and more. I believe in
+          delivering results by providing context and expecting accountability.
         </p>
 
         <p
           className="font-sans text-lg leading-relaxed md:text-xl"
           style={{ color: "#c8c8d8", fontWeight: 400, lineHeight: "1.75" }}
         >
-          I use AI to build GTM systems that let small teams punch well above
-          their weight. Automation, intelligence, and operational rigor — so the
-          humans can focus on the work that actually matters.
+          My approach is to build tech-driven GTM systems that let small teams punch 
+          well above their weight. Automation, intelligence, and operational rigor that
+          allows humans to focus on the work that actually matters.
         </p>
       </motion.div>
 
