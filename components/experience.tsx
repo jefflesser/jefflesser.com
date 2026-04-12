@@ -113,7 +113,7 @@ function ExperienceItem({
       />
       {/* Timeline dot */}
       <div
-        className="absolute left-[-3px] top-[9px] h-[7px] w-[7px] rounded-full transition-colors duration-200 group-hover:bg-indigo-500"
+        className="absolute left-[-3px] top-[9px] h-[7px] w-[7px] rounded-full transition-colors duration-200 group-hover:bg-blue-500"
         style={{ background: "#2a2a3a" }}
         aria-hidden="true"
       />
@@ -127,7 +127,7 @@ function ExperienceItem({
             className="font-sans text-lg font-semibold transition-colors duration-150"
             style={{ color: "#e8e8e8" }}
             onMouseEnter={(e) =>
-              ((e.currentTarget as HTMLElement).style.color = "#6366f1")
+              ((e.currentTarget as HTMLElement).style.color = "#3b82f6")
             }
             onMouseLeave={(e) =>
               ((e.currentTarget as HTMLElement).style.color = "#e8e8e8")
@@ -135,10 +135,7 @@ function ExperienceItem({
           >
             {job.company}
           </a>
-          <span
-            className="font-sans text-base"
-            style={{ color: "#888899" }}
-          >
+          <span className="font-sans text-base" style={{ color: "#888899" }}>
             {job.title}
           </span>
           <span
@@ -157,7 +154,7 @@ function ExperienceItem({
               style={{ color: "#888899", lineHeight: "1.6" }}
             >
               <span
-                style={{ color: "#6366f1", marginTop: "0.3em", flexShrink: 0 }}
+                style={{ color: "#3b82f6", marginTop: "0.3em", flexShrink: 0 }}
                 aria-hidden="true"
               >
                 —
@@ -180,7 +177,7 @@ export function Experience() {
       id="experience"
       ref={ref}
       aria-label="Work Experience"
-      className="relative px-6 py-24 md:py-32"
+      className="relative px-8 py-24 md:px-12 md:py-32"
     >
       {/* Divider */}
       <div
@@ -189,37 +186,35 @@ export function Experience() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto max-w-3xl">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-12"
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className="mb-12"
+      >
+        <span
+          className="font-mono mb-4 block text-xs tracking-widest uppercase"
+          style={{ color: "#3b82f6", letterSpacing: "0.2em" }}
         >
-          <span
-            className="font-mono mb-4 block text-xs tracking-widest uppercase"
-            style={{ color: "#6366f1", letterSpacing: "0.2em" }}
-          >
-            Experience
-          </span>
-          <h2
-            className="font-sans text-2xl font-semibold md:text-3xl"
-            style={{ color: "#e8e8e8" }}
-          >
-            Where I&apos;ve Built
-          </h2>
-        </motion.div>
+          Experience
+        </span>
+        <h2
+          className="font-sans text-2xl font-semibold md:text-3xl"
+          style={{ color: "#e8e8e8" }}
+        >
+          Where I&apos;ve Built
+        </h2>
+      </motion.div>
 
-        <div>
-          {jobs.map((job, i) => (
-            <ExperienceItem
-              key={job.company + job.dates}
-              job={job}
-              index={i}
-              isInView={isInView}
-            />
-          ))}
-        </div>
+      <div>
+        {jobs.map((job, i) => (
+          <ExperienceItem
+            key={job.company + job.dates}
+            job={job}
+            index={i}
+            isInView={isInView}
+          />
+        ))}
       </div>
     </section>
   );

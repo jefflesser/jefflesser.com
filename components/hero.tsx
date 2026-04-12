@@ -21,25 +21,14 @@ export function Hero() {
     <section
       id="hero"
       aria-label="Hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden px-6"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-8 md:px-12"
     >
-      {/* Subtle radial gradient background */}
+      {/* Radial blue glow — anchored to the hero, fades into the dot grid nicely */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(99,102,241,0.07) 0%, transparent 70%)",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Noise texture overlay */}
-      <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
-          backgroundRepeat: "repeat",
-          backgroundSize: "200px 200px",
+            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(59,130,246,0.08) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
@@ -54,10 +43,10 @@ export function Hero() {
           <h1
             className="font-mono font-black leading-none tracking-tight"
             style={{
-              fontSize: "clamp(80px, 14vw, 160px)",
-              color: "#6366f1",
+              fontSize: "clamp(80px, 13vw, 152px)",
+              color: "#3b82f6",
               letterSpacing: "-0.02em",
-              textShadow: "0 0 80px rgba(99,102,241,0.3)",
+              textShadow: "0 0 80px rgba(59,130,246,0.3)",
             }}
           >
             LFGTM
@@ -67,7 +56,7 @@ export function Hero() {
                 display: "inline-block",
                 width: "0.08em",
                 height: "0.85em",
-                background: "#6366f1",
+                background: "#3b82f6",
                 marginLeft: "0.06em",
                 verticalAlign: "middle",
                 borderRadius: "1px",
@@ -126,18 +115,18 @@ export function Hero() {
             href="#experience"
             className="group font-mono inline-flex items-center gap-2 border px-5 py-2.5 text-sm tracking-wide transition-all duration-200"
             style={{
-              borderColor: "rgba(99,102,241,0.4)",
-              color: "#6366f1",
+              borderColor: "rgba(59,130,246,0.4)",
+              color: "#3b82f6",
               borderRadius: "3px",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "#6366f1";
+              (e.currentTarget as HTMLElement).style.borderColor = "#3b82f6";
               (e.currentTarget as HTMLElement).style.background =
-                "rgba(99,102,241,0.08)";
+                "rgba(59,130,246,0.08)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.borderColor =
-                "rgba(99,102,241,0.4)";
+                "rgba(59,130,246,0.4)";
               (e.currentTarget as HTMLElement).style.background = "transparent";
             }}
           >
@@ -153,15 +142,15 @@ export function Hero() {
             href="#contact"
             className="group font-mono inline-flex items-center gap-2 px-5 py-2.5 text-sm tracking-wide transition-all duration-200"
             style={{
-              background: "#6366f1",
+              background: "#3b82f6",
               color: "#ffffff",
               borderRadius: "3px",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "#4f46e5";
+              (e.currentTarget as HTMLElement).style.background = "#2563eb";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.background = "#6366f1";
+              (e.currentTarget as HTMLElement).style.background = "#3b82f6";
             }}
           >
             Get in Touch{" "}
@@ -187,7 +176,7 @@ export function Hero() {
           className="h-10 w-px"
           style={{
             background:
-              "linear-gradient(to bottom, rgba(99,102,241,0.6), transparent)",
+              "linear-gradient(to bottom, rgba(59,130,246,0.6), transparent)",
           }}
         />
       </motion.div>

@@ -12,7 +12,7 @@ export function Contact() {
       id="contact"
       ref={ref}
       aria-label="Contact"
-      className="relative px-6 py-24 md:py-40"
+      className="relative px-8 py-24 md:px-12 md:py-40"
     >
       {/* Divider */}
       <div
@@ -21,17 +21,17 @@ export function Contact() {
         aria-hidden="true"
       />
 
-      {/* Subtle glow */}
+      {/* Subtle blue glow at the bottom of the page */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 100%, rgba(99,102,241,0.06) 0%, transparent 70%)",
+            "radial-gradient(ellipse 60% 50% at 50% 100%, rgba(59,130,246,0.06) 0%, transparent 70%)",
         }}
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-2xl text-center">
+      <div className="relative text-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -39,14 +39,14 @@ export function Contact() {
         >
           <span
             className="font-mono mb-6 block text-xs tracking-widest uppercase"
-            style={{ color: "#6366f1", letterSpacing: "0.2em" }}
+            style={{ color: "#3b82f6", letterSpacing: "0.2em" }}
           >
             Contact
           </span>
 
           <h2
             className="font-mono mb-3 text-3xl font-black md:text-4xl"
-            style={{ color: "#6366f1" }}
+            style={{ color: "#3b82f6" }}
           >
             LFGTM.
           </h2>
@@ -68,18 +68,18 @@ export function Contact() {
             href="mailto:jefflesser@gmail.com"
             className="font-mono group inline-flex items-center gap-2 border px-6 py-3 text-sm tracking-wide transition-all duration-200"
             style={{
-              borderColor: "rgba(99,102,241,0.4)",
-              color: "#6366f1",
+              borderColor: "rgba(59,130,246,0.4)",
+              color: "#3b82f6",
               borderRadius: "3px",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "#6366f1";
+              (e.currentTarget as HTMLElement).style.borderColor = "#3b82f6";
               (e.currentTarget as HTMLElement).style.background =
-                "rgba(99,102,241,0.08)";
+                "rgba(59,130,246,0.08)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.borderColor =
-                "rgba(99,102,241,0.4)";
+                "rgba(59,130,246,0.4)";
               (e.currentTarget as HTMLElement).style.background = "transparent";
             }}
           >
@@ -98,8 +98,8 @@ export function Contact() {
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLElement).style.borderColor =
-                "rgba(99,102,241,0.4)";
-              (e.currentTarget as HTMLElement).style.color = "#6366f1";
+                "rgba(59,130,246,0.4)";
+              (e.currentTarget as HTMLElement).style.color = "#3b82f6";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLElement).style.borderColor =
@@ -119,10 +119,7 @@ export function Contact() {
         transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="mt-20 text-center"
       >
-        <p
-          className="font-mono text-xs"
-          style={{ color: "#333344" }}
-        >
+        <p className="font-mono text-xs" style={{ color: "#333344" }}>
           © {new Date().getFullYear()} Jeff Lesser
         </p>
       </motion.div>
