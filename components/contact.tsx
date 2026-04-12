@@ -1,0 +1,131 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+
+export function Contact() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  return (
+    <section
+      id="contact"
+      ref={ref}
+      aria-label="Contact"
+      className="relative px-6 py-24 md:py-40"
+    >
+      {/* Divider */}
+      <div
+        className="mb-16 h-px w-full"
+        style={{ background: "rgba(255,255,255,0.06)" }}
+        aria-hidden="true"
+      />
+
+      {/* Subtle glow */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 50% at 50% 100%, rgba(99,102,241,0.06) 0%, transparent 70%)",
+        }}
+        aria-hidden="true"
+      />
+
+      <div className="relative mx-auto max-w-2xl text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <span
+            className="font-mono mb-6 block text-xs tracking-widest uppercase"
+            style={{ color: "#6366f1", letterSpacing: "0.2em" }}
+          >
+            Contact
+          </span>
+
+          <h2
+            className="font-mono mb-3 text-3xl font-black md:text-4xl"
+            style={{ color: "#6366f1" }}
+          >
+            LFGTM.
+          </h2>
+          <p
+            className="font-sans mb-10 text-xl font-semibold"
+            style={{ color: "#e8e8e8" }}
+          >
+            Let&apos;s build something.
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-wrap items-center justify-center gap-5"
+        >
+          <a
+            href="mailto:jefflesser@gmail.com"
+            className="font-mono group inline-flex items-center gap-2 border px-6 py-3 text-sm tracking-wide transition-all duration-200"
+            style={{
+              borderColor: "rgba(99,102,241,0.4)",
+              color: "#6366f1",
+              borderRadius: "3px",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "#6366f1";
+              (e.currentTarget as HTMLElement).style.background =
+                "rgba(99,102,241,0.08)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor =
+                "rgba(99,102,241,0.4)";
+              (e.currentTarget as HTMLElement).style.background = "transparent";
+            }}
+          >
+            jefflesser@gmail.com
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/jefflesser/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono group inline-flex items-center gap-2 border px-6 py-3 text-sm tracking-wide transition-all duration-200"
+            style={{
+              borderColor: "rgba(255,255,255,0.1)",
+              color: "#888899",
+              borderRadius: "3px",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor =
+                "rgba(99,102,241,0.4)";
+              (e.currentTarget as HTMLElement).style.color = "#6366f1";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor =
+                "rgba(255,255,255,0.1)";
+              (e.currentTarget as HTMLElement).style.color = "#888899";
+            }}
+          >
+            LinkedIn →
+          </a>
+        </motion.div>
+      </div>
+
+      {/* Footer */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.6, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        className="mt-20 text-center"
+      >
+        <p
+          className="font-mono text-xs"
+          style={{ color: "#333344" }}
+        >
+          © {new Date().getFullYear()} Jeff Lesser
+        </p>
+      </motion.div>
+    </section>
+  );
+}
